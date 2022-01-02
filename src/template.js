@@ -1,33 +1,6 @@
-// const generateHTML = function (employee) {
-// 	return `
-// <!DOCTYPE html>
-// <html lang="en">
-// <head>
-//     <meta charset="UTF-8">
-//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//     <title>Team Profile</title>
-// </head>
-// <body>
-//     <ul>
-//     <li>Name: ${employee.name}</li>
-//     <li>
-//         Id: ${employee.id}
-//     </li>
-//     <li>
-//         email: ${employee.email}
-//     </li>
-//     <li>
-//         role: ${employee.role}
-//     </li>
-// </ul>
-// </body>
-// `;
-// };
 
 
-// module.exports = generateHTML;
-
-// create Manager card
+// create Employee card
 const generateEmployee = function (employee) {
     return `
     <div class="col-4 mt-4">
@@ -63,20 +36,6 @@ generateHTML = (data) => {
             pageArray.push(employeeCard);
         }
 
-        // // call engineer function
-        // if (role === 'Engineer') {
-        //     const engineerCard = generateEngineer(employee);
-
-        //     pageArray.push(engineerCard);
-        // }
-
-        // // call intern function 
-        // if (role === 'Intern') {
-        //     const internCard = generateIntern(employee);
-
-        //     pageArray.push(internCard);
-        // }
-        
     }
 
     // joining strings 
