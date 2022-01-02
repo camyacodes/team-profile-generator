@@ -2,7 +2,7 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 const Employee = require("./lib/Employee");
 
-// const generateHTML = require("./src/generateHTML");
+const generateHTML = require("./src/template.js");
 
 const teamArray = [];
 
@@ -13,8 +13,14 @@ const addEmployee = () => {
     =================
     `);
 
-	return inquirer
-		.prompt([
+    return inquirer
+        .prompt([
+            {
+                type: 'list',
+                name: 'role',
+                message: "Please choose your employee's role",
+                choices: ['Employee']
+            },
 			{
 				type: "input",
 				name: "name",
@@ -43,7 +49,11 @@ const addEmployee = () => {
 			let { name, id, email, role, confirmAddEmployee } = employeeData;
 			let employee;
 
-			employee = new Employee(name, id, email, role);
+            if (role === 'Employee') {
+                employee = new Employee(name, id, email, role);
+
+                console.log(employee)
+            }
 
 			teamArray.push(employee);
 
@@ -55,10 +65,32 @@ const addEmployee = () => {
 		});
 };
 
+const writeFile = data => {
+    fs.writeFile('./dist/index.html', data, err => {
+        // if there is an error 
+        if (err) {
+            console.log(err);
+            return;
+        // when the profile has been created 
+        } else {
+            console.log("Your team profile has been successfully created! Please check out the index.html")
+        }
+    })
+}; 
+
+
 addEmployee()
   .then(teamArray => {
-    console.log(teamArray)
+      return generateHTML(teamArray);
+  })
+  .then(pageHTML => {
+    return writeFile(pageHTML);
   })
   .catch(err => {
  console.log(err);
   });
+
+
+  //Roles into one prompt
+
+  
