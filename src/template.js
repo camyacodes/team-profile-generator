@@ -18,6 +18,27 @@ const generateEmployee = function (employee) {
     `;
 }
 
+// create Manager card
+
+const generateManager = function (manager) {
+    return `
+    <div class="col-4 mt-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h3>${manager.name}</h3>
+                <h4>Manager</h4><i class="material-icons">content_paste</i>
+            </div>
+            <div class="card-body">
+                <p class="id">ID: ${manager.id}</p>
+                <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                <p class="office">Office Number: ${manager.officeNumber}</p>
+            </div>
+        </div>
+    </div>
+    `;
+}
+
+
 // push array to page 
 generateHTML = (data) => {
 
@@ -25,30 +46,37 @@ generateHTML = (data) => {
     pageArray = []; 
 
     for (let i = 0; i < data.length; i++) {
-        const employee = data[i];
-        const role = employee.getRole(); 
+        const teamMember = data[i];
+        const role = teamMember.getRole(); 
 
 
-        // call manager function
+        // call employee function
         if (role === 'Employee') {
-            const employeeCard = generateEmployee(employee);
+            const employeeCard = generateEmployee(teamMember);
 
             pageArray.push(employeeCard);
+        }
+
+        // call manager function
+        if (role === 'Manager') {
+            const managerCard = generateManager(teamMember);
+
+            pageArray.push(managerCard);
         }
 
     }
 
     // joining strings 
-    const employeeCards = pageArray.join('')
+    const teamMemberCards = pageArray.join('')
 
     // return to generated page
-    const generateTeam = generateTeamPage(employeeCards); 
+    const generateTeam = generateTeamPage(teamMemberCards); 
     return generateTeam;
 
 }
 
 // generate html page 
-const generateTeamPage = function (employeeCards) {   
+const generateTeamPage = function (teamMemberCards) {   
   return`
   <!DOCTYPE html>
   <html lang="en">
@@ -72,7 +100,7 @@ const generateTeamPage = function (employeeCards) {
           <div class="container">
               <div class="row justify-content-center" id="team-cards">
                   <!--Team Cards-->
-                  ${employeeCards}
+                  ${teamMemberCards}
               </div>
           </div>
       </main>

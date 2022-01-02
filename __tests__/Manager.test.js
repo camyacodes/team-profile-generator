@@ -11,31 +11,32 @@ test('creates an manager object', () => {
 })
 
 test("gets manager's name", () => {
-    const manager = new Manager('Mya', 5, 'code@code.com');
+    const manager = new Manager('Mya', 5, 'code@code.com', 1111111111);
 
     expect(manager.getName()).toHaveProperty('name')
 })
 
 test("gets manager's id", () => {
-    const manager = new Manager('Mya', 5, 'code@code.com');
+    const manager = new Manager('Mya', 5, 'code@code.com', 1111111111);
 
     expect(manager.getId()).toHaveProperty('id')
 })
 
 test("gets manager's email", () => {
-    const manager = new Manager('Mya', 5, 'code@code.com');
+    const manager = new Manager('Mya', 5, 'code@code.com', 1111111111);
 
     expect(manager.getEmail()).toHaveProperty('email')
 })
 
 test("gets manager's Office number", () => {
-    const manager = new Manager('Mya', 5, 'code@code.com');
+    const manager = new Manager('Mya', 5, 'code@code.com', 1111111111);
 
     expect(manager.getOfficeNumber()).toHaveProperty('officeNumber')
 })
 
 test("gets manager's role", () => {
-    const manager = new Manager('Mya', 5, 'code@code.com');
+    const manager = new Manager('Mya', 5, 'code@code.com', 1111111111);
 
     expect(manager.getRole()).toEqual('Manager')
 })
+ 
