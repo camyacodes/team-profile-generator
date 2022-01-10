@@ -3,6 +3,7 @@ const inquirer = require("inquirer");
 const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager")
 const Engineer = require("./lib/Engineer")
+const Intern = require("./lib/Intern")
 
 const generateHTML = require("./src/template.js");
 
@@ -21,7 +22,7 @@ const addTeamMember = () => {
                 type: 'list',
                 name: 'role',
                 message: "Please choose your Team member's role",
-                choices: ['Employee', 'Manager', 'Engineer']
+                choices: ['Employee', 'Manager', 'Engineer', 'Intern']
             },
             {
                 type: "input",
@@ -50,17 +51,23 @@ const addTeamMember = () => {
                 when: (input) => input.role === "Engineer",
                 message: "Please enter the engineer's github username"
             },
+            {
+                type: "input",
+                name: "school",
+                when: (input) => input.role === "Intern",
+                message: "Please enter the intern's school"
+            },
 			{
 				type: "confirm",
 				name: "confirmAddTeamMember",
 				message: "Would you like to add more team members?",
 				default: false,
-			},
+            },
 		])
 		.then((teamMemberData) => {
 			// data for employee types
 
-			let { name, id, email, officeNumber, role, user, confirmAddTeamMember } = teamMemberData;
+			let { name, id, email, officeNumber, role, user, school, confirmAddTeamMember } = teamMemberData;
 			let teamMember;
 
             if (role === 'Employee') {
@@ -76,6 +83,12 @@ const addTeamMember = () => {
             if (role === "Engineer") {
 
                 teamMember = new Engineer(name, id, email, user);
+
+            }
+
+            if (role === "Intern") {
+
+                teamMember = new Intern(name, id, email, school);
 
             }
 
