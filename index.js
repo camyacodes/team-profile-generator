@@ -44,6 +44,12 @@ const addTeamMember = () => {
                 when: (input) => input.role === "Manager",
                 message: "Please enter the manager's office number"
             },
+            {
+                type: "input",
+                name: "user",
+                when: (input) => input.role === "Engineer",
+                message: "Please enter the engineer's github username"
+            },
 			{
 				type: "confirm",
 				name: "confirmAddTeamMember",
@@ -54,7 +60,7 @@ const addTeamMember = () => {
 		.then((teamMemberData) => {
 			// data for employee types
 
-			let { name, id, email, officeNumber, role, confirmAddTeamMember } = teamMemberData;
+			let { name, id, email, officeNumber, role, user, confirmAddTeamMember } = teamMemberData;
 			let teamMember;
 
             if (role === 'Employee') {
@@ -63,7 +69,14 @@ const addTeamMember = () => {
 
             } else if (role === "Manager") {
 
-                teamMember = new Manager (name, id, email, officeNumber, role);
+                teamMember = new Manager(name, id, email, officeNumber, role);
+                
+            }
+            
+            if (role === "Engineer") {
+
+                teamMember = new Engineer(name, id, email, user);
+
             }
 
 			teamArray.push(teamMember);
