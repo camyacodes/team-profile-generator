@@ -21,22 +21,22 @@ const addTeamMember = () => {
                 type: 'list',
                 name: 'role',
                 message: "Please choose your Team member's role",
-                choices: ['Employee', 'Manager']
+                choices: ['Employee', 'Manager', 'Engineer']
             },
             {
                 type: "input",
                 name: "name",
-                message: "What's the name of the employee?",
+                message: "What's the name of the team member?",
             },
             {
                 type: "input",
                 name: "id",
-                message: "Please enter the employee's ID.",
+                message: "Please enter the team member's ID.",
             },
             {
                 type: "input",
                 name: "email",
-                message: "Please enter the employee's email.",
+                message: "Please enter the team member's email.",
             },
             {
                 type: "input",
