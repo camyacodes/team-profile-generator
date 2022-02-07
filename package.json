@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/camyacodes/team-profile-generator#readme",
   "devDependencies": {
-    "jest": "^27.4.5"
+    "jest": "^27.5.0"
   },
   "dependencies": {
     "inquirer": "^8.2.0"
