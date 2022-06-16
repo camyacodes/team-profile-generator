@@ -4,4 +4,4 @@ This repo is for a Node.js command-line application that takes in information ab
 
 ![image](https://user-images.githubusercontent.com/87587644/152725373-71860537-a185-44f6-98cc-b08feaa4bb0b.png)
 
-Walkthrough video: https://watch.screencastify.com/v/A83Vd9JV3n1g5iuf4K8a
+Walkthrough video: (https://drive.google.com/file/d/1huLw2PG6YuEC7COt1YBaotNpjyz3Fs_E/view)
