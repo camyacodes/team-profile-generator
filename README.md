@@ -1,10 +1,15 @@
 # Team Profile Builder
 
 ## Description
-This repo is for a Node.js command-line application that takes in information about employees on a software engineering team and dynamically generates an HTML webpage that displays a summary for each person.
+This repo is for a Node.js command-line application that takes in information about employees on a team and dynamically generates a webpage that displays a summary for each person.
+
 
 ## Video Demonstration 
-<!-- https://drive.google.com/file/d/1na6jlH68PWwrLA7c1tLm_MictMdoprtQ/view -->
+
+LIVE DEMO: https://drive.google.com/file/d/1T5EJF5ZMHfdiYBuwffOat1nw5WzF-oLp/view?usp=sharing
+![image](https://github.com/camyacodes/team-profile-generator/assets/87587644/abe399f9-c63b-4c82-acd6-60ab84012552)
+![image](https://user-images.githubusercontent.com/87587644/152725373-71860537-a185-44f6-98cc-b08feaa4bb0b.png)
+
 
 ## Technologies 
 
